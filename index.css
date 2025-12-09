@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    background-color: #333;
+    color: white;
+    padding: 2%;
+    display: flex;
+}
+
+nav{
+    margin-left: auto;
+    padding: 1%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: gray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.welcome-section{
+    text-align: center;
+    padding: 50px;
+    border: 5px solid #333;
+    border-radius: 20px;
+    margin: 20px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.empleados{
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
