@@ -1,11 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <link rel="stylesheet" href="services.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
+        <header>
+        <h1>Peluquería Perú</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservar Cita</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services-section">
+            <h2>Servicios</h2>
+            <p>En Peluquería Perú ofrecemos una gama completa de servicios profesionales para cabello y estética. A continuación, algunos de nuestros servicios más solicitados:</p>
+
+            <div class="servicios">
+                <article class="servicio">
+                    <h3>Corte de cabello</h3>
+                    <p>Cortes personalizados para hombre, mujer y niños, adaptados a tu estilo y forma de rostro.</p>
+                    <span class="precio">15€</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Coloración y Tintes</h3>
+                    <p>Coloración permanente y semipermanente, corrección de color y retoques de raíces.</p>
+                    <span class="precio">Desde 35€</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Mechas y Balayage</h3>
+                    <p>Mechas clásicas, balayage y degradados para dar luminosidad y movimiento al cabello.</p>
+                    <span class="precio">Desde 50 €</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Peinados y Recogidos</h3>
+                    <p>Peinados para eventos, novias y ocasiones especiales. Recogidos clásicos y modernos.</p>
+                    <span class="precio">25 € - 60 €</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Tratamientos Capilares</h3>
+                    <p>Tratamientos reparadores, hidratantes y anti-frizz para recuperar la salud del cabello.</p>
+                    <span class="precio">30 €</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Alisado y Permanente</h3>
+                    <p>Servicios de alisado progresivo, keratina y permanentes realizados por profesionales.</p>
+                    <span class="precio">Consultar</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Lavado y Secado</h3>
+                    <p>Lavado profesional con masaje relajante y secado/peinado con acabado a tu gusto.</p>
+                    <span class="precio">12 €</span>
+                </article>
+
+                <article class="servicio">
+                    <h3>Depilación y Estética</h3>
+                    <p>Depilación facial y corporal, diseño de cejas y servicios estéticos básicos.</p>
+                    <span class="precio">Desde 8 €</span>
+                </article>
+            </div>
+
+            <p class="nota">¿Quieres conocer precios o pedir cita? Visita nuestra página de <a href="contact.html">Contacto</a> o llámanos.</p>
+        </section>
+       <section class="gallery-section" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">Galería de Estilos Populares</h2>
+    <p>Selecciona uno de los cortes tendencia o busca uno específico:</p>
+
+    <div class="quick-styles">
+        <button type="button" class="style-btn" data-style="Taper Fade">Taper Fade</button>
+        <button type="button" class="style-btn" data-style="Mohicano">Mohicano</button>
+        <button type="button" class="style-btn" data-style="Mullet">Mullet</button>
+        <button type="button" class="style-btn" data-style="Buzz Cut">Buzz Cut</button>
+        <button type="button" class="style-btn" data-style="Pompadour">Pompadour</button>
+        <button type="button" class="style-btn" data-style="Undercut">Undercut</button>
+        <button type="button" class="style-btn" data-style="French Crop">French Crop</button>
+        <button type="button" class="style-btn" data-style="Low Fade">Low Fade</button>
+        <button type="button" class="style-btn" data-style="Slicked Back">Slicked Back</button>
+        <button type="button" class="style-btn" data-style="Crew Cut">Crew Cut</button>
+    </div>
+
+    <form id="search-form" class="search-form" role="search" style="margin-top: 20px;">
+        <label for="search-input" class="visually-hidden">Buscar otro estilo</label>
+        <input id="search-input" type="search" placeholder="O escribe otro estilo..." aria-label="Buscar estilo de corte">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div id="result" class="result" aria-live="polite">
+        <p class="result-info">Haz clic en un botón para ver el corte.</p>
+    </div>
+</section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Peluquería Perú — Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="services.js" defer></script>
+
 </body>
 </html>

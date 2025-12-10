@@ -1,0 +1,280 @@
+:root{
+    --header-height: 100px;
+    --accent: #8a8585;
+    --bg-dark: #333;
+    --card-bg: rgba(255,255,255,0.92);
+    --text-color: #222;
+}
+
+*{box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 100px; 
+    background-image: url("pelu fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 0 2%;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+    border-bottom: 5px solid #8a8585;
+    z-index: 1000; 
+}
+
+nav {
+    margin-left: auto;
+    margin-right: 50px;
+    height: 100%;
+    display: flex;       
+    align-items: center; 
+    font-size: 20px;
+    font-weight: bold;
+    gap: 20px;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;   
+    padding: 0;  
+    align-items: center;
+    
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative; 
+    padding: 5px 0;    
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #d4af37; 
+    transition: all 0.3s ease; 
+}
+
+nav a:hover {
+    color: #d4af37; 
+}
+
+nav a:hover::after {
+    width: 100%; 
+    left: 0;     
+}
+
+.site-footer{ 
+    padding: 18px 0; 
+    text-align:center; 
+    color: #fff; 
+    font-size: .9rem;
+    background-color: #333;
+    border-top: 5px solid #8a8585;
+    flex-shrink: 0;
+}
+
+.booking-container {
+    background-color: var(--card-bg); /* Fondo blanco semitransparente */
+    width: 90%;
+    max-width: 600px; /* Ancho máximo para que no se estire demasiado */
+    margin: 40px auto; /* Centrado horizontal y margen vertical */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Sombra para efecto de elevación */
+}
+
+.booking-container h2 {
+    color: var(--bg-dark);
+    margin-top: 0;
+    font-size: 2rem;
+    border-bottom: 2px solid #d4af37; /* Línea dorada decorativa */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   ESTILOS DEL FORMULARIO
+   ========================================= */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--bg-dark);
+    font-size: 0.95rem;
+}
+
+/* Estilos para todos los inputs y selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Ocupan todo el ancho disponible */
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al hacer clic en un campo */
+input:focus, select:focus {
+    outline: none;
+    border-color: #d4af37; /* Color dorado al escribir */
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* Agrupación de Fecha y Hora (Lado a lado) */
+.date-time-group {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.date-item, .time-item {
+    flex: 1; /* Ambos toman el mismo ancho (50%) */
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   BOTÓN DE RESERVA
+   ========================================= */
+.btn-reservar {
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-reservar:hover {
+    background-color: #d4af37; /* Dorado al pasar el mouse */
+    color: var(--bg-dark);
+}
+
+.btn-reservar:active {
+    transform: scale(0.98); /* Pequeño efecto de presión al hacer clic */
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: var(--bg-dark);
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Empuja el footer al final si el contenido es corto */
+    border-top: 5px solid var(--accent);
+}
+
+/* =========================================
+   RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        position: relative; /* Deja de ser fijo en móviles para no tapar pantalla */
+    }
+
+    body {
+        padding-top: 0; /* Ajuste porque el header ya no es fixed */
+    }
+
+    nav {
+        margin: 15px 0 0 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .booking-container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .date-time-group {
+        flex-direction: column; /* Fecha y hora uno debajo del otro en móviles */
+        gap: 0;
+    }
+}
+
+
+/* El mensaje empieza oculto */
+.mensaje-oculto {
+    display: none; /* Invisible por defecto */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4af37; /* Tu color dorado */
+    color: #333; /* Texto oscuro */
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #b5952f;
+    animation: aparecer 0.5s ease;
+}
+
+/* Pequeña animación para que aparezca suavemente */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
