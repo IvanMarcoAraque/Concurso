@@ -20,6 +20,8 @@ header{
     right: 0;
     width: 100%;
     margin-top: 0;
+    border-bottom: 5px solid #8a8585;
+
 }
 
 main{
@@ -187,4 +189,14 @@ details[open]{
     summary h2{ font-size: 1rem; }
     .empleado img{ height: 150px; }
     .welcome-section{ width: 92%; padding: 28px; }
+}
+
+.site-footer{ 
+    margin-top: 24px; 
+    padding: 18px 0; 
+    text-align:center; 
+    color: #fff; 
+    font-size: .9rem;
+    background-color: #333;
+    border-top: 5px solid #8a8585;
 }

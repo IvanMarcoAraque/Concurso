@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <link rel="stylesheet" href="contact.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Peluquería Perú</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome-section contact-welcome" style="max-width:1100px;">
+        <h2>Contacto</h2>
+        <p>Escríbenos y te responderemos lo antes posible. También puedes llamarnos o visitarnos en nuestro local.</p>
+
+        <div class="contact-grid">
+            <div class="contact-form-card">
+                <h3>Envíanos un mensaje</h3>
+                <form id="contact-form" autocomplete="off">
+                    <label>Nombre
+                        <input type="text" id="c-name" required>
+                    </label>
+                    <label>Correo
+                        <input type="email" id="c-email" required>
+                    </label>
+                    <label>Teléfono
+                        <input type="tel" id="c-phone">
+                    </label>
+                    <label>Asunto
+                        <input type="text" id="c-subject">
+                    </label>
+                    <label>Mensaje
+                        <textarea id="c-message" rows="5" required></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button class="btn" type="submit">Enviar</button>
+                        <button class="btn secondary" type="reset">Limpiar</button>
+                    </div>
+                    <p id="contact-feedback" class="contact-feedback" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="contact-info-card">
+                <h3>Información</h3>
+                <p><strong>Dirección:</strong> Av. Principal 123, Lima, Perú</p>
+                <p><strong>Teléfono:</strong> +51 9XX XXX XXX</p>
+                <p><strong>Correo:</strong> contacto@peluqueriaperu.com</p>
+
+                <h4>Horario</h4>
+                <ul class="horario-list">
+                    <li>Lunes — Viernes: 09:00 — 19:00</li>
+                    <li>Sábado: 09:00 — 17:00</li>
+                    <li>Domingo: Cerrado</li>
+                </ul>
+
+                <h4>Ubicación</h4>
+                <div class="map-wrap">
+                    <iframe 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-77.042%2C-12.046%2C-77.033%2C-12.040&layer=mapnik&marker=-12.043%2C-77.037"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Peluquería Perú — Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script src="contact.js" defer></script>
+
+
 </body>
 </html>
