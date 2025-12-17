@@ -1,5 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { 
+    getFirestore, 
+    collection, 
+    addDoc, 
+    query, 
+    where, 
+    getDocs,
+    orderBy 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC4SVIbgdvN3La4470uuC4onZEsVpviuKU",
@@ -26,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mensajeExito = document.getElementById('mensaje-exito');
     const boton = document.querySelector('.btn-reservar');
     const yearSpan = document.getElementById('year');
+    
     if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     if (!form) return;
@@ -73,19 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-                await addDoc(collection(db, "reservas"), {
-                    cliente: nombre,
-                    email: email,
-                    telefono: telefono,
-                    servicio: servicio,
-                    barbero: barbero,
-                    fecha_reserva: fecha,
-                    hora_reserva: hora,
-                    creado_el: new Date(),
-                    procesado: false  
-});
+            await addDoc(collection(db, "reservas"), {
+                cliente: nombre,
+                email: email,
+                telefono: telefono,
+                servicio: servicio,
+                barbero: barbero,
+                fecha_reserva: fecha,
+                hora_reserva: hora,
+                creado_el: new Date(), 
+                procesado: false  
+            });
 
-            // Éxito visual
             if(boton) boton.style.display = 'none'; 
             
             if(mensajeExito) {
@@ -96,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 mensajeExito.innerText = "✅ ¡Cita reservada con éxito!";
             }
 
- 
             setTimeout(() => { 
                 form.reset(); 
                 if(mensajeExito) mensajeExito.style.display = 'none'; 
@@ -122,3 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+async function verReservasOrdenadas() {
+    console.log("Cargando reservas...");
+    const q = query(collection(db, "reservas"), orderBy("creado_el", "desc"));
+    
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        console.log(`${data.fecha_reserva} a las ${data.hora_reserva} - Cliente: ${data.cliente} (Creado: ${data.creado_el.toDate().toLocaleString()})`);
+    });
+}
+
+window.verReservasOrdenadas = verReservasOrdenadas;

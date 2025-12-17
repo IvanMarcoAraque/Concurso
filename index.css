@@ -235,3 +235,48 @@ details[open]{
     background-color: #333;
     border-top: 5px solid #8a8585;
 }
+
+
+@media (max-width: 768px) {
+    
+    header {
+        height: auto;         
+        flex-direction: column; 
+        padding: 15px 0;
+        position: relative;     
+    }
+
+    body {
+        padding-top: 0; 
+    }
+
+    nav {
+        margin: 10px 0 0 0;    
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center; 
+        flex-wrap: wrap;        
+        gap: 15px;               
+        font-size: 16px;       
+    }
+
+    .welcome-section {
+        width: 90%;           
+        padding: 20px;        
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .welcome-section img {
+        width: 100%;     
+        height: auto;   
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
