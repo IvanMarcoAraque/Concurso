@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // BLOQUEO TOTAL: Si hay alguien a esa hora, no deja reservar
             const q = query(collection(db, "reservas"), 
                 where("fecha_reserva", "==", fecha),
                 where("hora_reserva", "==", hora)
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     mensajeExito.innerText = `⚠️ Las ${hora} ya está ocupada.\nPrueba a las ${horaAntes} o ${horaDespues}.`;
                 }
                 
-                // Si falla por ocupado, reactivamos el botón
                 if(boton) {
                     boton.textContent = "Confirmar Reserva";
                     boton.disabled = false;
@@ -75,20 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // GUARDAR RESERVA
-            await addDoc(collection(db, "reservas"), {
-                cliente: nombre,
-                email: email,
-                telefono: telefono,
-                servicio: servicio,
-                barbero: barbero,
-                fecha_reserva: fecha,
-                hora_reserva: hora,
-                creado_el: new Date()
-            });
+                await addDoc(collection(db, "reservas"), {
+                    cliente: nombre,
+                    email: email,
+                    telefono: telefono,
+                    servicio: servicio,
+                    barbero: barbero,
+                    fecha_reserva: fecha,
+                    hora_reserva: hora,
+                    creado_el: new Date(),
+                    procesado: false  
+});
 
             // Éxito visual
-            if(boton) boton.style.display = 'none'; // Ocultamos botón temporalmente
+            if(boton) boton.style.display = 'none'; 
             
             if(mensajeExito) {
                 mensajeExito.style.display = 'block';
@@ -98,13 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 mensajeExito.innerText = "✅ ¡Cita reservada con éxito!";
             }
 
-            // --- AQUÍ ESTÁ EL ARREGLO ---
-            // A los 3 segundos: limpiamos formulario Y reactivamos el botón
+ 
             setTimeout(() => { 
                 form.reset(); 
-                if(mensajeExito) mensajeExito.style.display = 'none'; // Ocultar mensaje
+                if(mensajeExito) mensajeExito.style.display = 'none'; 
                 if(boton) {
-                    boton.style.display = 'block'; // Volver a mostrar botón
+                    boton.style.display = 'block';
                     boton.textContent = "Confirmar Reserva";
                     boton.disabled = false;
                 }

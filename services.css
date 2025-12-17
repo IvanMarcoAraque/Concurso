@@ -87,14 +87,13 @@ nav a:hover::after {
     width: 100%; 
     left: 0;     
 }
-/* ------------------------------------------- */
 
 main{
     margin: 0 auto;
     max-width: 1100px;
     padding: 28px 16px 56px;
     flex: 1 0 auto;
-    margin-top: 20px; /* Pequeño ajuste para separar del header fijo */
+    margin-top: 20px; 
 }
 
 .services-section{
@@ -178,12 +177,11 @@ main{
     flex-shrink: 0;
 }
 
-/* Media Queries ajustadas */
 @media (max-width: 720px){
     header{
-        height: 80px; /* Altura móvil */
+        height: 80px; 
     }
-    body { padding-top: 80px; } /* Ajuste del padding body para móvil */
+    body { padding-top: 80px; } 
     
     nav{ font-size: 16px; margin-right: 8px; }
     .services-section{ padding: 18px; }
